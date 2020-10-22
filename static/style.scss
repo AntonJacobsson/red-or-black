@@ -1,0 +1,36 @@
+@import "../node_modules/bulma/bulma.sass";
+
+.image-position {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 2em;
+    max-height: 70vh;
+}
+
+.bottom-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 15vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-container > button {
+    border-radius: 100%;
+    min-height: 8em;
+    min-width: 8em;
+    height: 100%;
+    outline: none;
+}
+
+html {
+    background-image: url('../src/cards/cash.jpg');
+    height: 100vh;
+}
+
+.text-center {
+    text-align: center;
+    padding-top: 1em;
+}

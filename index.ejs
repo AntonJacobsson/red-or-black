@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title><%- htmlWebpackPlugin.options.metadata.title %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="<%- htmlWebpackPlugin.options.metadata.baseUrl %>">
+</head>
+
+<body aurelia-app="main">
+
+  <% if (htmlWebpackPlugin.options.metadata.isCordova) { %>
+  <script type="text/javascript" src="cordova.js"></script>
+  <script>
+    var admobid = {}
+    if (/(android)/i.test(navigator.userAgent)) {  // for android & amazon-fireos
+      admobid = {
+        interstitial: 'ca-app-pub-5803000491420516/6138874695',
+      }
+    }
+    document.addEventListener('deviceready', function () {
+
+      admob.interstitial.config({
+        id: admobid.interstitial,
+        isTesting: false,
+        autoShow: false,
+      })
+      admob.interstitial.prepare()
+
+    }, false)
+
+    document.addEventListener('openBannerAd', function (event) {
+      admob.interstitial.show()
+    })
+
+    document.addEventListener('hideBannerAd', function (event) {
+      admob.interstitial.prepare()
+    })
+  </script>
+  <% } %>
+</body>
+
+</html>

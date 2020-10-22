@@ -1,0 +1,23 @@
+<template>
+  <div class="columns" style="width: 100%; margin: 0">
+    <div class="column" style="padding:0">
+      <div>
+        <img class="image-position" src.bind="imageSrc">
+      </div>
+
+      <div class="text-center">
+        <p class="title is-3">${score}</p>
+        <p class="subtitle is-5">${text}</p>
+      </div>
+
+      <div class="bottom-container">
+        <button class="round-button" style="background: red;" click.delegate="pickCard(0)"></button>
+        <button class="round-button" style="background: black;" click.delegate="pickCard(1)"></button>
+      </div>
+     
+      
+    </div>
+  </div>
+
+</template>
+
